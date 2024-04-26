@@ -21,6 +21,7 @@ pipelines:
             - node
           script:
             - npm install
+            - npm install -g @quasar/cli
             - quasar build
             - pipe: atlassian/sftp-deploy:0.5.0
               variables:
@@ -35,6 +36,7 @@ pipelines:
             - node
           script:
             - npm install
+            - npm install -g @quasar/cli
             - quasar build
             - pipe: atlassian/sftp-deploy:0.5.0
               variables:
