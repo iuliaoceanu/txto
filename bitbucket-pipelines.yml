@@ -22,7 +22,7 @@ pipelines:
           script:
             - npm install
             - npm install -g @quasar/cli
-            - quasar build
+            - quasar build -m ssr
             - pipe: atlassian/sftp-deploy:0.5.0
               variables:
                 USER: $USER_STAGING
@@ -37,7 +37,7 @@ pipelines:
           script:
             - npm install
             - npm install -g @quasar/cli
-            - quasar build
+            - quasar build -m ssr
             - pipe: atlassian/sftp-deploy:0.5.0
               variables:
                 USER: $USER_MASTER
