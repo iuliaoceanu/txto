@@ -14,7 +14,7 @@ pipelines:
   #          - npm install
   #          - npm run build
   branches:
-   dev:
+    dev:
       - step:
           deployment: staging
           caches:
@@ -28,7 +28,7 @@ pipelines:
                 SERVER: $SERVER_STAGING
                 REMOTE_PATH: '/var/www/txto-fe'
                 LOCAL_PATH: 'dist/*'
-   master:
+    master:
       - step:
           deployment: production
           caches:

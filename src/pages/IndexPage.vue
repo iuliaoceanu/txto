@@ -34,4 +34,18 @@
 defineOptions({
   name: 'IndexPage'
 });
+
+import HeroBanner from "../components/HeroBanner.vue";
+import GamePresentation from "../components/GamePresentation.vue";
+import TxtoPackage from "../components/TxtoPackage.vue";
+import TxtoGames from "../components/TxtoGames.vue";
+import WhyToPlay from "../components/WhyToPlay.vue";
+import Testimonials from "../components/Testimonials.vue";
+import WhatsInside from "../components/WhatsInside .vue";
+import FAQ from "../components/FAQ.vue";
+import PriceDetails from "../components/PriceDetails.vue";
+import WhoCreatedTxto from "../components/WhoCreatedTxto.vue";
+import TxtoCommunity from "../components/TxtoCommunity.vue";
+import Contact from "../components/Contact.vue";
+import MainFooter from  "../components/MainFooter.vue";
 </script>
