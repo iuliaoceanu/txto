@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Averia Libre';
+  font-style: normal;
+  src: url('../assets/fonts/Averia_Libre/AveriaLibre-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Averia Libre';
+  font-style: italic;
+  src: url('../assets/fonts/Averia_Libre/AveriaLibre-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Averia Libre';
+  font-style: normal;
+  src: url('../assets/fonts/Averia_Libre/AveriaLibre-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Averia Libre';
+  font-style: italic;
+  src: url('../assets/fonts/Averia_Libre/AveriaLibre-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Averia Libre';
+  font-style: normal;
+  src: url('../assets/fonts/Averia_Libre/AveriaLibre-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Averia Libre';
+  font-style: italic;
+  src: url('../assets/fonts/Averia_Libre/AveriaLibre-BoldItalic.ttf') format('truetype');
+}
+
+
+* {
+  font-family: 'Averia Libre', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@media only screen and (min-width: 0px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1.9rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
