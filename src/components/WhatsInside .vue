@@ -1,14 +1,25 @@
 <template>
   <section class="whats-inside">
-    <h2>Ce contine jocul TXTO?</h2>
+    <h2>{{ whatsInside.title }}</h2>
     <div class="align-content">
-      <p>Pachetul contine un set de carti cu toate literele alfabetului, si are un set de reguli pentru 3 jocuri + mini markerul TXTO!</p>
+      <p>{{ whatsInside.description }}</p>
       <img class="img1" src="../assets/images/regulament.png">
       <img class="img2" src="../assets/images/box%202.png">
       <img class="img3" src="../assets/images/pen.png">
     </div>
   </section>
 </template>
+
+<script setup>
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
+  import { useLanguage } from '../store/language.js'
+
+  const { state } = useStore()
+  const { activeLanguage } = useLanguage()
+
+  const whatsInside = computed(() => state[activeLanguage.value].whatsInsideSection)
+</script>
 
 <style lang="scss">
   .whats-inside {

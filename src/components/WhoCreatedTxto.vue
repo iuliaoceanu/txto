@@ -1,14 +1,25 @@
 <template>
   <section class="who-created-txto">
-    <h2>Cine a creat TXTO?</h2>
-    <p>Salut, ma numesc Dragos Velicu, si am creat jocul TXTO sub dorinta unui imbold creativ. Fiind fascinat de educatie si cultura imi doream sa pot oferi copiilor un joc care sa ii dezvolte, sa ii creasca asa cum am crescut si eu, cu amintirea multor jocuri din copilarie.</p>
-    <p>In acelasi timp doresc sa perpetuam valorile culturale si apetitul nostru pentru jocuri distractive si educative.</p>
-    <p>La inceput nu aveam carti ci erau cateva hartiute cu litere. Am reusit sa o conving pe matusa mea sa accepte sa ii arat jocul. Asa a pornit totul.</p>
-    <p>Apoi lucrurile au evoluat si in 2014 a fost gata primul joc TXTO sub forma pachetului de carti.</p>
-    <p>Dorinta mea profunda este sa ajut copiii sa se joace placut si intr-un mod in care sa ii imbogateasca, sa ii ridice.</p>
+    <h2>{{ whoCreatedTXTO.title }}</h2>
+    <p>{{ whoCreatedTXTO.description }}</p>
+    <p>{{ whoCreatedTXTO.secondDescription }}</p>
+    <p>{{ whoCreatedTXTO.thirdDescription }}</p>
+    <p>{{ whoCreatedTXTO.forthDescription }}</p>
+    <p>{{ whoCreatedTXTO.fifthDescription }}</p>
     <img src="../assets/images/Group%2048.png">
   </section>
 </template>
+
+<script setup>
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
+  import { useLanguage } from '../store/language.js'
+
+  const { state } = useStore()
+  const { activeLanguage } = useLanguage()
+
+  const whoCreatedTXTO = computed(() => state[activeLanguage.value].whoCreatedTxtoSection)
+</script>
 
 <style lang="scss">
   .who-created-txto {

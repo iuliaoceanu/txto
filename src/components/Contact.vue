@@ -1,8 +1,8 @@
 <template>
   <section class="contact">
     <div class="align-content">
-      <h2>CONTACT</h2>
-      <p>Ne puteti contacta la nr. de telefon 0743 536 495 sau pe adresa de email: txto@txto.eu sau folosind formularul de mai jos</p>
+      <h2>{{ contact.title }}</h2>
+      <p>{{ contact.description }}</p>
     </div>
     <form>
       <label for="email">email</label>
@@ -13,6 +13,17 @@
     </form>
   </section>
 </template>
+
+<script setup>
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
+  import { useLanguage } from '../store/language.js'
+
+  const { state } = useStore()
+  const { activeLanguage } = useLanguage()
+
+  const contact = computed(() => state[activeLanguage.value].contactSection)
+</script>
 
 <style lang="scss">
   @import '../css/quasar.variables.scss';

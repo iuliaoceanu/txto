@@ -1,15 +1,24 @@
 <template>
   <section class="price-details">
-    <h2>Pret si optiuni de cumparare</h2>
-    <p>Un joc TXTO Junior costa 60 RON. La acest cost se va mai adauga costul de livrare de aproximativ 25 RON.</p>
-    <p>Daca veti cumpara doua jocuri, transportul va fi gratuit.</p>
-    <p>Iar la trei sau mai multe jocuri cumparate, aveti transport gratuit si discount de 15%, deci veti plati in total 165 RON.</p>
+    <h2>{{ priceDetails.title }}</h2>
+    <p>{{ priceDetails.description }}</p>
+    <p>{{ priceDetails.secondDescription }}</p>
+    <p>{{ priceDetails.thirdDescription }}</p>
     <BaseButton>Cumpara TXTO</BaseButton>
   </section>
 </template>
 
 <script setup>
   import BaseButton from '../components/BaseButton.vue';
+
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
+  import { useLanguage } from '../store/language.js'
+
+  const { state } = useStore()
+  const { activeLanguage } = useLanguage()
+
+  const priceDetails = computed(() => state[activeLanguage.value].priceDetailsSection)
 </script>
 
 <style lang="scss">
@@ -30,6 +39,8 @@
     @media only screen and (min-width: 768px) {
       background-image: url('../assets/images/bkg-light-tab1.png');
       padding: 60px 139px;
+      display: flex;
+      align-items: center;
 
       h2 {
         padding-bottom: 30px;

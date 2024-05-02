@@ -1,10 +1,21 @@
 <template>
   <section class="game-presentation">
-    <p>TXTO este un joc de carti foarte distractiv pe care copiii il iubesc, pentru ca le stimuleaza gandirea, empatia si buna dispozitie.</p>
-    <p>Conceptul jocului a fost creat in 2009 de catre Dragos Velicu, si de atunci a fost rafinat in varianta TXTO Junior, special pentru copiii intre 6 si 14 ani.</p>
+    <p>{{ gamePresentation.description }}</p>
+    <p>{{ gamePresentation.secondDescription }}</p>
     <img src="../assets/images/Group%2032.png">
   </section>
 </template>
+
+<script setup>
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
+  import { useLanguage } from '../store/language.js'
+
+  const { state } = useStore()
+  const { activeLanguage } = useLanguage()
+
+  const gamePresentation = computed(() => state[activeLanguage.value].gamePresentationSection)
+</script>
 
 <style lang="scss">
   .game-presentation {

@@ -2,9 +2,8 @@
   <section class="hero-banner">
     <div class="align-text-and-images">
       <div class="text">
-        <h1>TXTO, jocul cuvintelor, al imaginatiei, si al creativitatii! </h1>
-        <p>Creat special pentru dezvoltarea armonioasa a copiilor, si pentru
-          a lasa amintiri copilaresti!</p>
+        <h1>{{ title }}</h1>
+        <p>{{ heroBanner.description }}</p>
       </div>
       <div class="images">
         <img class="img1" src="../assets/images/Group%2042.png">
@@ -17,6 +16,16 @@
 
 <script setup>
   import BaseButton from '../components/BaseButton.vue';
+
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
+  import { useLanguage } from '../store/language.js'
+
+  const { state } = useStore()
+  const { activeLanguage } = useLanguage()
+
+  const title = computed(() => state[activeLanguage.value].mainTitle)
+  const heroBanner = computed(() => state[activeLanguage.value].heroBannerSection)
 </script>
 
 <style lang="scss">

@@ -1,7 +1,7 @@
 <template>
   <section class="txto-package">
-    <p class="text1">TXTO este foarte versatil datorita faptului ca se pot juca mai multe jocuri cu un singur pachet de carti.</p>
-    <p class="text2">Numarul de carti din fiecare litera a fost atent calculat, pentru a ...</p>
+    <p class="text1">{{ txtoPackage.description }}</p>
+    <p class="text2">{{ txtoPackage.secondDescription }}</p>
     <img src="../assets/images/Group%2033.png">
     <BaseButton>Intra in joc!</BaseButton>
   </section>
@@ -9,6 +9,15 @@
 
 <script setup>
   import BaseButton from '../components/BaseButton.vue';
+
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
+  import { useLanguage } from '../store/language.js'
+
+  const { state } = useStore()
+  const { activeLanguage } = useLanguage()
+
+  const txtoPackage = computed(() => state[activeLanguage.value].txtoPackageSection)
 </script>
 
 <style lang="scss">

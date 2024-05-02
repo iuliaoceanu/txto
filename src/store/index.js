@@ -1,5 +1,6 @@
 import { store } from 'quasar/wrappers'
 import { createStore } from 'vuex'
+import { content } from './data.js'
 
 // import example from './module-example'
 
@@ -14,10 +15,23 @@ import { createStore } from 'vuex'
 
 export default store(function (/* { ssrContext } */) {
   const Store = createStore({
+    state: {
+      ro: content.ro,
+      en: content.en,
+      activeLanguage: 'ro',
+    },
+    mutations: {
+      setActiveLanguage(state, language) {
+        state.activeLanguage = language
+      }
+    },
     modules: {
       // example
     },
-
+    getters: {
+      activeLanguage: state => state.activeLanguage,
+      activeContent: state => state[state.activeLanguage]
+    },
     // enable strict mode (adds overhead!)
     // for dev mode and --debug builds only
     strict: process.env.DEBUGGING

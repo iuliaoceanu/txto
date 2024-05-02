@@ -1,28 +1,30 @@
 <template>
   <section class="why-to-play">
-    <h2>De ce joaca copiii TXTO?</h2>
+    <h2>{{ whyToPlay.title }}</h2>
     <div class="align-reasons-and-text">
-      <div class="reasons-and-text">
-        <div class="reasons">
-          <figure>
-            <img class="icon" src="../assets/icons/image%202.png">
-            <span>pentru dezvoltarea inteligentei emotionale</span>
-          </figure>
-        </div>
-        <p>TXTO este creat special sa dezvolte inteligenta emotionala si creativitatea. Copiii sunt stimulati sa creeze noi cuvinte si implicit se creeaza noi conexiuni mentale.</p>
-      </div>
-      <div class="reasons-and-text">
-        <div class="reasons">
-          <figure>
-            <img class="icon" src="../assets/icons/image%202.png">
-            <span>pentru socializare si prieteni noi</span>
-          </figure>
-        </div>
-        <p>Cu siguranta va veti face prieteni noi si veti fi mai aproape jucand TXTO.</p>
-      </div>
+      <ReasonsItem
+          v-for="(reason, index) in whyToPlay.reasons"
+          :key="index"
+          :iconSrc="reason.iconSrc"
+          :reason="reason.title"
+          :description="reason.description"
+      ></ReasonsItem>
     </div>
   </section>
 </template>
+
+<script setup>
+  import ReasonsItem from "./ReasonsItem.vue";
+
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
+  import { useLanguage } from '../store/language.js'
+
+  const { state } = useStore()
+  const { activeLanguage } = useLanguage()
+
+  const whyToPlay = computed(() => state[activeLanguage.value].whyToPlaySection)
+</script>
 
 <style lang="scss">
   .why-to-play {
@@ -33,39 +35,6 @@
 
       h2 {
         padding: 100px 0 40px 0;
-      }
-
-      p {
-        padding: 20px 0;
-      }
-
-      .reasons {
-        width: 304px;
-        height: 105px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image: url('../assets/images/circle.png');
-        background-size: cover;
-        margin-left: 20px;
-
-        figure {
-          display: flex;
-          flex-direction: row;
-          margin-left: 10px;
-        }
-
-        .icon {
-          width: 47px;
-          height: 40px;
-          margin-top: 10px;
-          margin-left: 10px;
-        }
-
-        span {
-          font-size: 1.9rem;
-          margin-left: 5px;
-        }
       }
     }
 
@@ -80,19 +49,6 @@
       .align-reasons-and-text {
         display: flex;
         flex-direction: row;
-
-        .reasons-and-text {
-          margin-right: 50px;
-        }
-
-        .reasons {
-          margin-left: 0;
-        }
-
-        p {
-          text-align: justify;
-          width: 290px;
-        }
       }
     }
 
