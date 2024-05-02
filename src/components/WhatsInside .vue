@@ -74,7 +74,19 @@
         flex-direction: row;
       }
     }
-    @media only screen and (min-width: 1024px) {}
+
+    @media only screen and (min-width: 1024px) {
+      padding: 70px 130px 110px 130px;
+
+      .align-content {
+        padding-top: 30px;
+      }
+
+      p {
+        padding-right: 40px;
+      }
+    }
+
     @media only screen and (min-width: 1512px) {}
   }
 </style>

@@ -20,12 +20,18 @@
         padding-top: 15px;
       }
     }
+
     @media only screen and (min-width: 768px) {
       p {
         padding-right: 30px;
       }
     }
-    @media only screen and (min-width: 1024px) {}
+
+    @media only screen and (min-width: 1024px) {
+      h3 {
+        padding-top: 50px;
+      }
+    }
     @media only screen and (min-width: 1512px) {}
   }
 </style>

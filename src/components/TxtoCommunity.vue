@@ -32,7 +32,18 @@
         padding-bottom: 30px;
       }
     }
-    @media only screen and (min-width: 1024px) {}
+
+    @media only screen and (min-width: 1024px) {
+      padding: 50px 215px 50px 215px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p {
+        padding-bottom: 20px;
+      }
+    }
+
     @media only screen and (min-width: 1512px) {}
   }
 </style>

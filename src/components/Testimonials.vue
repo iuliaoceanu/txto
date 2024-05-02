@@ -34,10 +34,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-bottom: 20px;
     }
 
     @media only screen and (min-width: 768px) {
-      padding: 0 60px;
+      padding: 0 60px 30px 60px;
 
       h2 {
         text-align: center;
@@ -49,7 +50,10 @@
       }
     }
 
-    @media only screen and (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {
+      padding: 20px 156px 40px 156px;
+    }
+
     @media only screen and (min-width: 1512px) {}
   }
 </style>

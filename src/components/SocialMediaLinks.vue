@@ -30,7 +30,11 @@
       margin: 20px 0;
     }
 
-    @media only screen and (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {
+      .insta, .fb, .yt {
+        margin-right: 40px;
+      }
+    }
     @media only screen and (min-width: 1512px) {}
   }
 </style>

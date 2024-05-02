@@ -67,7 +67,29 @@
         width: 290px;
       }
     }
-    @media only screen and (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .reasons {
+        width: 347px;
+        height: 120px;
+
+        figure {
+          margin-left: 20px;
+        }
+      }
+
+      p {
+        width: 320px;
+      }
+
+      span {
+        font-size: 2.2rem;
+      }
+    }
+
     @media only screen and (min-width: 1512px) {}
   }
 </style>

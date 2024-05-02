@@ -34,6 +34,7 @@
       img {
         width: 276px;
         height: 418px;
+        margin-top: 30px;
       }
     }
 
@@ -41,7 +42,11 @@
       padding: 0 139px;
     }
 
-    @media only screen and (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {
+      p {
+        width: 491px;
+      }
+    }
     @media only screen and (min-width: 1512px) {}
   }
 </style>

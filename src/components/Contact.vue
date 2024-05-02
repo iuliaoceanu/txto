@@ -33,7 +33,7 @@
       padding: 20px 0;
 
       form {
-        width: 300px;
+        width: 270px;
         display: flex;
         flex-direction: column;
         margin: 0 auto;
@@ -57,7 +57,7 @@
         }
 
         button {
-          width: 300px;
+          width: 270px;
           height: 40px;
           margin-top: 20px;
           font-size: 1.8rem;
@@ -85,7 +85,20 @@
       }
     }
 
-    @media only screen and (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {
+      padding: 10px 215px 50px 215px;
+      width: 597px;
+      align-items: start;
+
+      p {
+        width: 269px;
+      }
+
+      form {
+        margin-left: 50px;
+      }
+    }
+
     @media only screen and (min-width: 1512px) {}
   }
 </style>

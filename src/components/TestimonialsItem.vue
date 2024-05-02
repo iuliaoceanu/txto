@@ -27,7 +27,7 @@
 
         .icon {
           width: 14.86px;
-          height: 14.12px;
+          height: 15.12px;
         }
       }
 
@@ -44,7 +44,17 @@
       }
     }
 
-    @media only screen and (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {
+      figure {
+        margin: 42px 90px 0 0;
+      }
+
+      span {
+        padding: 15px 0;
+        font-size: 2rem;
+        float: left;
+      }
+    }
     @media only screen and (min-width: 1512px) {}
   }
 </style>

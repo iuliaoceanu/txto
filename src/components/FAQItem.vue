@@ -44,7 +44,19 @@
         margin-left: 0;
       }
     }
-    @media only screen and (min-width: 1024px) {}
+
+    @media only screen and (min-width: 1024px) {
+      width: 424px;
+
+      span {
+        font-size: 2.2rem;
+      }
+
+      p {
+        padding-bottom: 40px;
+      }
+    }
+
     @media only screen and (min-width: 1512px) {}
   }
 </style>

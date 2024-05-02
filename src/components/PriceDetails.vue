@@ -46,7 +46,20 @@
         padding-bottom: 30px;
       }
     }
-    @media only screen and (min-width: 1024px) {}
+
+    @media only screen and (min-width: 1024px) {
+      padding: 100px 215px 115px 215px;
+
+      h2 {
+        padding-bottom: 50px;
+      }
+
+      p {
+        width: 597px;
+        padding-bottom: 20px;
+      }
+    }
+
     @media only screen and (min-width: 1512px) {}
   }
 </style>

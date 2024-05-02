@@ -11,6 +11,7 @@
       </div>
     </div>
     <BaseButton>Cadou TXTO!</BaseButton>
+    <img class="line" src="../assets/images/line-tab2.png">
   </section>
 </template>
 
@@ -54,10 +55,14 @@
         width: 266px;
         height: 239px;
       }
+
+      .line {
+        display: none;
+      }
     }
 
     @media only screen and (min-width: 768px) {
-      padding: 50px 60px 0 60px;
+      padding-top: 50px;
       align-items: normal;
 
       h1 {
@@ -65,6 +70,7 @@
       }
 
       .align-text-and-images {
+        margin: 0 60px;
         display: flex;
         flex-direction: row;
       }
@@ -76,7 +82,31 @@
       }
     }
 
-    @media only screen and (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {
+      padding-top: 50px;
+
+      .align-text-and-images, button {
+        margin: 0 180px;
+      }
+
+      h1, p {
+        width: 377px;
+      }
+
+      p {
+        font-size: 2.4rem;
+      }
+
+      .img2 {
+        width: 356.8px;
+        height: 321.21px;
+        margin-left: 50px;
+      }
+
+      .line {
+         display: flex;
+       }
+    }
     @media only screen and (min-width: 1512px) {}
   }
 </style>

@@ -52,7 +52,10 @@
       }
     }
 
-    @media only screen and (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {
+      padding: 20px 156px 125px 156px;
+    }
+
     @media only screen and (min-width: 1512px) {}
   }
 </style>

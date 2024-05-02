@@ -1,7 +1,9 @@
 <template>
   <section class="game-presentation">
-    <p>{{ gamePresentation.description }}</p>
-    <p>{{ gamePresentation.secondDescription }}</p>
+    <div class="text">
+      <p>{{ gamePresentation.description }}</p>
+      <p>{{ gamePresentation.secondDescription }}</p>
+    </div>
     <img src="../assets/images/Group%2032.png">
   </section>
 </template>
@@ -25,6 +27,10 @@
       flex-direction: column;
       align-items: center;
 
+      p {
+        padding-bottom: 15px;
+      }
+
       img {
         width: 490.72px;
         height: 285.81px;
@@ -36,7 +42,17 @@
       padding: 10px 139px;
     }
 
-    @media only screen and (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {
+      flex-direction: column-reverse;
+
+      p {
+        width: 491px;
+      }
+
+      img {
+        margin-bottom: 30px;
+      }
+    }
     @media only screen and (min-width: 1512px) {}
   }
 </style>

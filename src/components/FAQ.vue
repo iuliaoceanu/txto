@@ -45,7 +45,18 @@
       }
     }
 
-    @media only screen and (min-width: 1024px) {}
+    @media only screen and (min-width: 1024px) {
+      padding: 20px 250px 50px 250px;
+
+      h2 {
+        position: absolute;
+      }
+
+      .questions {
+        flex-direction: column;
+        margin-top: 100px;
+      }
+    }
     @media only screen and (min-width: 1512px) {}
   }
 </style>

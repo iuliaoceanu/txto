@@ -42,7 +42,21 @@
         padding-bottom: 30px;
       }
     }
-    @media only screen and (min-width: 1024px) {}
+
+    @media only screen and (min-width: 1024px) {
+      padding: 100px 215px 50px 215px;
+
+      p {
+        padding-bottom: 20px;
+      }
+      
+      img {
+        width: 538px;
+        height: 192.55px;
+        display: flex;
+        margin-top: 40px;
+      }
+    }
     @media only screen and (min-width: 1512px) {}
   }
 </style>
