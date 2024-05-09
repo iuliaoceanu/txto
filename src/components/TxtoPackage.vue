@@ -1,9 +1,13 @@
 <template>
   <section class="txto-package">
-    <p class="text1">{{ txtoPackage.description }}</p>
-    <p class="text2">{{ txtoPackage.secondDescription }}</p>
-    <img src="../assets/images/Group%2033.png">
-    <BaseButton>Intra in joc!</BaseButton>
+    <div>
+      <div>
+        <p v-html="txtoPackage.description" />
+        <BaseButton text="Intra in joc!" />
+      </div>
+      <img src="../assets/images/Group%2033.png" />
+      <BaseButton text="Intra in joc!" />
+    </div>
   </section>
 </template>
 
@@ -17,24 +21,27 @@
   const { state } = useStore()
   const { activeLanguage } = useLanguage()
 
-  const txtoPackage = computed(() => state[activeLanguage.value].txtoPackageSection)
+  const  txtoPackage  = computed(() => state[activeLanguage.value].txtoPackageSection)
 </script>
 
 <style lang="scss">
   .txto-package {
     @media only screen and (min-width: 0px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 0 20px;
 
-      .text2 {
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      p + .base-button {
         display: none;
       }
 
       img {
         width: 276px;
-        height: 418px;
-        margin-top: 30px;
+        margin-top: 20px;
       }
     }
 
@@ -43,10 +50,28 @@
     }
 
     @media only screen and (min-width: 1024px) {
-      p {
-        width: 491px;
+      padding: 0 267px;
+    }
+
+    @media only screen and (min-width: 1512px) {
+      padding: 0 320px;
+
+      > div {
+        flex-direction: row-reverse;
+      }
+
+      div > div {
+        padding-top: 60px;
+        padding-left: 110px;
+      }
+
+      p + .base-button {
+        display: block;
+      }
+
+      img + .base-button {
+        display: none;
       }
     }
-    @media only screen and (min-width: 1512px) {}
   }
 </style>

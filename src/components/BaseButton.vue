@@ -1,10 +1,12 @@
 <template>
-  <button class="base-button" @click="$emit('click')">
-    <slot></slot>
-  </button>
+  <button class="base-button" v-html="text" @click="emits('click')" />
 </template>
 
 <script setup>
+  defineProps({
+    text: String,
+  })
+  const emits = defineEmits(['click'])
 </script>
 
 <style lang="scss">
@@ -19,7 +21,8 @@
       height: 40px;
       border: none;
       border-radius: 4px;
-      margin: 30px auto 20px auto;
+      margin-top: 30px;
+      //margin: 30px auto 20px auto;
     }
 
     @media only screen and (min-width: 748px) {

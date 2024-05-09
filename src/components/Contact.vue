@@ -1,8 +1,8 @@
 <template>
-  <section class="contact">
-    <div class="align-content">
-      <h2>{{ contact.title }}</h2>
-      <p>{{ contact.description }}</p>
+  <section id="contact" class="contact">
+    <div>
+      <h2 v-html="contact.title" />
+      <p v-html="contact.description" />
     </div>
     <form>
       <label for="email">email</label>
@@ -30,7 +30,7 @@
 
   .contact {
     @media only screen and (min-width: 0px) {
-      padding: 20px 0;
+      padding: 20px;
 
       form {
         width: 270px;
@@ -70,35 +70,31 @@
     }
 
     @media only screen and (min-width: 768px) {
-      padding: 0 50px 0 139px;
+      padding: 10px 70px 0 139px;
       display: flex;
       flex-direction: row;
       align-items: center;
 
       h2 {
-        text-align: left;
         padding-bottom: 10px;
       }
 
-      p {
-        width: 230px;
+      > div {
+        margin-right: 35px;
       }
     }
 
     @media only screen and (min-width: 1024px) {
-      padding: 10px 215px 50px 215px;
-      width: 597px;
+      padding: 10px 214px 50px 214px;
       align-items: start;
 
-      p {
-        width: 269px;
-      }
-
       form {
-        margin-left: 50px;
+        margin-left: 30px;
       }
     }
 
-    @media only screen and (min-width: 1512px) {}
+    @media only screen and (min-width: 1512px) {
+      padding: 10px 456px 50px 456px;
+    }
   }
 </style>

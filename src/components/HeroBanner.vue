@@ -1,17 +1,19 @@
 <template>
   <section class="hero-banner">
-    <div class="align-text-and-images">
+    <div>
       <div class="text">
-        <h1>{{ title }}</h1>
-        <p>{{ heroBanner.description }}</p>
+        <h1 v-html="title" />
+        <p v-html="heroBanner.description" />
+        <BaseButton text="Cadou TXTO!" />
       </div>
       <div class="images">
-        <img class="img1" src="../assets/images/Group%2042.png">
-        <img class="img2" src="../assets/images/txto-junior-pack%201.png">
+        <img class="img1" src="../assets/images/Group%2042.png" />
+        <img class="img2" src="../assets/images/txto-junior-pack%201.png" />
       </div>
     </div>
-    <BaseButton>Cadou TXTO!</BaseButton>
-    <img class="line" src="../assets/images/line-tab2.png">
+    <BaseButton text="Cadou TXTO!" />
+    <img class="line" src="../assets/images/line-tab2.png" />
+    <img class="line-desktop" src="../assets/images/line-desktop.png" />
   </section>
 </template>
 
@@ -32,6 +34,7 @@
 <style lang="scss">
   .hero-banner {
     @media only screen and (min-width: 0px) {
+      padding: 0 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -39,6 +42,10 @@
       h1 {
         padding-top: 20px;
         line-height: 31px;
+      }
+
+      p + .base-button {
+        display: none;
       }
 
       .images {
@@ -53,44 +60,45 @@
 
       .img2 {
         width: 266px;
-        height: 239px;
       }
 
-      .line {
+      .line, .line-desktop {
         display: none;
       }
     }
 
     @media only screen and (min-width: 768px) {
-      padding-top: 50px;
-      align-items: normal;
+      padding: 50px 60px 0 60px;
 
       h1 {
         padding-bottom: 20px;
       }
 
-      .align-text-and-images {
-        margin: 0 60px;
+      > div {
         display: flex;
         flex-direction: row;
       }
 
+      p + .base-button {
+        display: block;
+      }
+
+      div + .base-button {
+        display: none;
+      }
+
       .img2 {
         width: 293px;
-        height: 263px;
         margin-left: 20px;
       }
     }
 
     @media only screen and (min-width: 1024px) {
-      padding-top: 50px;
+      margin-top: 50px;
+      padding: 0;
 
-      .align-text-and-images, button {
-        margin: 0 180px;
-      }
-
-      h1, p {
-        width: 377px;
+      > div {
+        padding: 0 90px 0 180px;
       }
 
       p {
@@ -99,14 +107,49 @@
 
       .img2 {
         width: 356.8px;
-        height: 321.21px;
-        margin-left: 50px;
+        transform: rotate(15deg);
+        z-index: 1;
       }
 
       .line {
-         display: flex;
+        display: flex;
+        width: 100%;
        }
     }
-    @media only screen and (min-width: 1512px) {}
+
+    @media only screen and (min-width: 1512px) {
+      > div {
+        padding: 0 247px;
+      }
+
+      .images {
+        display: flex;
+        flex-direction: row;
+        margin-left: 50px;
+      }
+
+      .img1 {
+        width: 358px;
+        display: flex;
+        z-index: 2;
+      }
+
+      .img2 {
+        width: 331px;
+        transform: rotate(5deg);
+        margin-left: -70px;
+        z-index: 1;
+      }
+
+      .line {
+        display: none;
+      }
+
+      .line-desktop {
+        width: 100%;
+        display: block;
+        margin-top: 40px;
+      }
+    }
   }
 </style>

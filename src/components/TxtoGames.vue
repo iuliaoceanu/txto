@@ -1,7 +1,7 @@
 <template>
-  <section class="txto-games">
-    <h2>{{ txtoGames.title }}</h2>
-    <ul class="games">
+  <section id="txto-games" class="txto-games">
+    <h2 v-html="txtoGames.title" />
+    <ul>
       <TxtoGamesItem v-for="game in txtoGames.games" :key="game.id" :id="game.id" :title="game.title"
                          :description="game.description">
       </TxtoGamesItem>
@@ -24,30 +24,20 @@
 <style lang="scss">
   .txto-games {
     @media only screen and (min-width: 0px) {
-        padding-top: 20px;
+        padding: 20px 20px 0 20px;
+
+      ul {
+        padding-left: 0;
+      }
     }
 
     @media only screen and (min-width: 768px) {
-      padding: 30px 60px 0 60px;
+      padding: 30px 63px 0 63px;
 
-      h2 {
-        text-align: center;
-      }
-
-      .games {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding-top: 20px;
-      }
-
-      .game2 {
-        padding-left: 80px;
-      }
-
-      p {
-        width: 270px;
+      ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 150px;
       }
     }
 
@@ -55,10 +45,20 @@
       padding: 30px 191px;
 
       h2 {
-        position: absolute;
-        padding-left: 40px;
+        //position: absolute;
       }
     }
-    @media only screen and (min-width: 1512px) {}
+
+    @media only screen and (min-width: 1512px) {
+      padding: 50px 211px;
+
+      h2 {
+        position: relative;
+      }
+
+      ul {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
   }
 </style>

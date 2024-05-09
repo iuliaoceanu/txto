@@ -1,7 +1,7 @@
 <template>
   <section class="txto-games-item">
     <h3>{{ id + '. ' + title }}</h3>
-    <p>{{ description }}</p>
+    <p v-html="description" />
   </section>
 </template>
 
@@ -21,17 +21,10 @@
       }
     }
 
-    @media only screen and (min-width: 768px) {
-      p {
-        padding-right: 30px;
-      }
-    }
+    @media only screen and (min-width: 768px) {}
 
-    @media only screen and (min-width: 1024px) {
-      h3 {
-        padding-top: 50px;
-      }
-    }
+    @media only screen and (min-width: 1024px) {}
+
     @media only screen and (min-width: 1512px) {}
   }
 </style>

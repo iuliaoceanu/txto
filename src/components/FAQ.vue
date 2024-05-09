@@ -1,7 +1,7 @@
 <template>
-  <section class="faq">
-    <h2>{{ faq.title }}</h2>
-    <div class="questions">
+  <section id="faq" class="faq">
+    <h2 v-html="faq.title" />
+    <div>
       <FAQItem
           v-for="(question, index) in faq.questions"
           :key="index"
@@ -28,35 +28,47 @@
 <style lang="scss">
   .faq {
     @media only screen and (min-width: 0px) {
-      padding: 20px 0;
+      padding: 0 20px;
     }
 
     @media only screen and (min-width: 768px) {
-      padding: 0 60px 30px 60px;
+      padding: 0 75px 30px 75px;
 
       h2 {
-        padding: 20px 0;
+        padding: 10px 0;
       }
 
-      .questions {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+      > div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
       }
     }
 
     @media only screen and (min-width: 1024px) {
-      padding: 20px 250px 50px 250px;
+      padding: 20px 267px;
 
       h2 {
-        position: absolute;
+        //position: absolute;
       }
 
-      .questions {
+      > div {
+        display: flex;
         flex-direction: column;
-        margin-top: 100px;
+        margin-top: 50px;
       }
     }
-    @media only screen and (min-width: 1512px) {}
+
+    @media only screen and (min-width: 1512px) {
+      padding: 20px 536px;
+
+      h2 {
+        text-align: center;
+      }
+
+      > div {
+        align-items: center;
+      }
+    }
   }
 </style>

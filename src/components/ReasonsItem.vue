@@ -1,12 +1,12 @@
 <template>
-  <div class="reasons-and-text">
-    <div class="reasons">
+  <div class="reasons">
+    <div>
       <figure>
-        <img class="icon" :src="iconSrc">
-        <span>{{ reason }}</span>
+        <img :src="iconSrc" />
+        <span v-html="reason" />
       </figure>
     </div>
-    <p>{{ description }}</p>
+    <p v-html="description" />
   </div>
 </template>
 
@@ -19,33 +19,26 @@
 </script>
 
 <style lang="scss">
-  .reasons-and-text {
+  .reasons {
     @media only screen and (min-width: 0px) {
-      p {
-        padding: 20px 0;
-      }
-
-      .reasons {
+      > div {
         width: 304px;
         height: 105px;
         display: flex;
-        align-items: center;
-        justify-content: center;
         background-image: url('../assets/images/circle.png');
         background-size: cover;
-        margin-left: 20px;
 
         figure {
           display: flex;
           flex-direction: row;
+          align-items: center;
           margin-left: 10px;
-        }
 
-        .icon {
-          width: 47px;
-          height: 40px;
-          margin-top: 10px;
-          margin-left: 10px;
+          img {
+            width: 47px;
+            height: 40px;
+            margin-left: 10px;
+          }
         }
 
         span {
@@ -53,26 +46,26 @@
           margin-left: 5px;
         }
       }
+
+      p {
+        padding: 20px 0;
+      }
     }
 
     @media only screen and (min-width: 768px) {
       margin-right: 50px;
 
-      .reasons {
-        margin-left: 0;
-      }
-
       p {
         text-align: justify;
-        width: 290px;
       }
     }
+
     @media only screen and (min-width: 1024px) {
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      .reasons {
+      > div {
         width: 347px;
         height: 120px;
 
@@ -81,15 +74,13 @@
         }
       }
 
-      p {
-        width: 320px;
-      }
-
       span {
         font-size: 2.2rem;
       }
     }
 
-    @media only screen and (min-width: 1512px) {}
+    @media only screen and (min-width: 1512px) {
+      margin-right: 80px;
+    }
   }
 </style>

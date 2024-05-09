@@ -1,7 +1,7 @@
 <template>
   <section class="txto-community">
-    <h2>{{ txtoCommunity.title }}</h2>
-    <p>{{ txtoCommunity.description }}</p>
+    <h2 v-html="txtoCommunity.title" />
+    <p v-html="txtoCommunity.description" />
     <SocialMediaLinks />
   </section>
 </template>
@@ -22,28 +22,30 @@
 <style lang="scss">
   .txto-community {
     @media only screen and (min-width: 0px) {
-      padding-top: 10px;
+      padding: 10px 20px 0 20px;
     }
 
     @media only screen and (min-width: 768px) {
-      padding: 20px 139px;
+      padding: 10px 139px;
 
       h2 {
-        padding-bottom: 30px;
+        padding-bottom: 20px;
       }
     }
 
     @media only screen and (min-width: 1024px) {
-      padding: 50px 215px 50px 215px;
+      padding: 40px 214px;
       display: flex;
       flex-direction: column;
       align-items: center;
 
       p {
-        padding-bottom: 20px;
+        padding-bottom: 10px;
       }
     }
 
-    @media only screen and (min-width: 1512px) {}
+    @media only screen and (min-width: 1512px) {
+      padding: 40px 456px;
+    }
   }
 </style>

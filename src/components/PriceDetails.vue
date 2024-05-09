@@ -1,10 +1,10 @@
 <template>
-  <section class="price-details">
-    <h2>{{ priceDetails.title }}</h2>
-    <p>{{ priceDetails.description }}</p>
-    <p>{{ priceDetails.secondDescription }}</p>
-    <p>{{ priceDetails.thirdDescription }}</p>
-    <BaseButton>Cumpara TXTO</BaseButton>
+  <section id="price-details" class="price-details">
+
+      <h2 v-html="priceDetails.title" />
+      <p v-html="priceDetails.description" />
+      <BaseButton text="Cumpara TXTO" />
+
   </section>
 </template>
 
@@ -26,32 +26,32 @@
     @media only screen and (min-width: 0px) {
       background-image: url('../assets/images/bkg-light-mobile.png');
       background-size: cover;
-      padding-top: 80px;
-      padding-bottom: 162px;
+      padding: 50px 20px 210px 20px;
       display: flex;
       flex-direction: column;
-
-      p {
-        padding: 5px 0;
-      }
+      align-items: center;
     }
 
     @media only screen and (min-width: 768px) {
       background-image: url('../assets/images/bkg-light-tab1.png');
-      padding: 60px 139px;
-      display: flex;
-      align-items: center;
+      //background-size: cover;
+      padding: 50px 139px;
+      z-index: 999;
+      height: fit-content;
 
       h2 {
-        padding-bottom: 30px;
+        padding-bottom: 20px;
       }
     }
 
     @media only screen and (min-width: 1024px) {
-      padding: 100px 215px 115px 215px;
+      padding: 70px 214px 85px 214px;
+      height: 100%;
+      //height: auto;
+      //width: 100%;
 
       h2 {
-        padding-bottom: 50px;
+        padding-bottom: 30px;
       }
 
       p {
@@ -60,6 +60,11 @@
       }
     }
 
-    @media only screen and (min-width: 1512px) {}
+    @media only screen and (min-width: 1512px) {
+      background-image: url('../assets/images/bkg-light-desktop.png');
+      background-size: cover;
+      width: 1450px;
+      margin: 0 auto;
+    }
   }
 </style>

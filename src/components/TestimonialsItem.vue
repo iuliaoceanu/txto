@@ -1,10 +1,10 @@
 <template>
   <div class="comments">
     <figure>
-      <img class="icon" :src="iconSrc">
-      <p>{{ comment }}</p>
+      <img :src="iconSrc" />
+      <p v-html="comment" />
     </figure>
-    <span>{{ author }}</span>
+    <span v-html="author" />
   </div>
 </template>
 
@@ -23,38 +23,47 @@
         display: flex;
         flex-direction: row;
         align-items: baseline;
-        margin-top: 42px;
+        margin: 0;
 
-        .icon {
+        img {
           width: 14.86px;
-          height: 15.12px;
+          margin-right: 5px;
+        }
+
+        p {
+          margin: 20px 0 0 0;
         }
       }
 
       span {
         font-size: 1.7rem;
-        text-align: right;
         float: right;
       }
     }
 
     @media only screen and (min-width: 768px) {
-      .icon {
-        margin-right: 10px;
+      figure, span {
+        margin-right: 40px;
       }
     }
 
     @media only screen and (min-width: 1024px) {
+      figure, span {
+        margin: 0;
+      }
+
       figure {
-        margin: 42px 90px 0 0;
+        margin: 30px 30px 0 0;
       }
 
       span {
-        padding: 15px 0;
+        padding: 15px 20px;
         font-size: 2rem;
         float: left;
       }
     }
-    @media only screen and (min-width: 1512px) {}
+    @media only screen and (min-width: 1512px) {
+      margin-right: 50px;
+    }
   }
 </style>

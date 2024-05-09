@@ -2,24 +2,39 @@
   <section class="main-footer">
     <div class="footer-menu">
       <ul>
-        <li>Home</li>
-        <li>Ce este TXTO?</li>
-        <li>Jocuri</li>
-        <li>Beneficii</li>
-        <li>Pareri/Testimoniale</li>
-        <li>Ce contine pachetul TXTO</li>
-        <li>Intrebari frecvente</li>
-        <li>Pret si detalii cumparare</li>
-        <li>Despre creator</li>
-        <li>Contact</li>
+        <li v-for="page in pages" :key="page.id">
+          <a :href="'#' + page.id" @click.prevent="scrollToSection(page.id)">{{ page.title }}</a>
+        </li>
       </ul>
-      <SocialMediaLinks />
+      <div class="social-media-container">
+        <SocialMediaLinks class="social-media-links" />
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
   import SocialMediaLinks from "../components/SocialMediaLinks.vue";
+
+  const pages = [
+    { id: 'home', title: 'Home' },
+    { id: 'game-presentation', title: 'Ce este TXTO?' },
+    { id: 'txto-games', title: 'Jocuri' },
+    { id: 'why-to-play', title: 'Beneficii' },
+    { id: 'testimonials', title: 'Pareri' },
+    { id: 'whats-inside', title: 'Pachetul TXTO' },
+    { id: 'faq', title: 'Intrebari' },
+    { id: 'price-details', title: 'Pret' },
+    { id: 'who-created-txto', title: 'Despre' },
+    { id: 'contact', title: 'Contact' },
+  ];
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 </script>
 
 <style lang="scss">
@@ -31,20 +46,56 @@
       background-size: cover;
       margin-top: 40px;
       padding-top: 5px;
-      height: 102px ;
+      height: 102px;
 
       .footer-menu {
         background-color: $dark-green;
-        color: $light-yellow;
+        margin-top: 50px;
+        padding: 0 20px 50px 40px;
+      }
+
+      ul {
         font-size: 2rem;
         line-height: 4.4rem;
-        margin-top: 50px;
-        padding-bottom: 50px;
+        padding: 0;
+      }
+
+      a {
+        color: $light-yellow;
       }
     }
 
-    @media only screen and (min-width: 768px) {}
-    @media only screen and (min-width: 1024px) {}
-    @media only screen and (min-width: 1512px) {}
+    @media only screen and (min-width: 768px) {
+      .footer-menu {
+        padding: 0 100px;
+      }
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+
+      .social-media-container {
+        text-align: right;
+      }
+
+      .social-media-links {
+        display: inline-block;
+        margin: -30px 30px 30px 0;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      .footer-menu {
+        padding: 0 214px;
+      }
+    }
+
+    @media only screen and (min-width: 1512px) {
+      .footer-menu {
+        padding: 0 456px;
+      }
+    }
   }
 </style>

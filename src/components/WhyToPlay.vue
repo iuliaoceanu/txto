@@ -1,7 +1,7 @@
 <template>
-  <section class="why-to-play">
-    <h2>{{ whyToPlay.title }}</h2>
-    <div class="align-reasons-and-text">
+  <section id="why-to-play" class="why-to-play">
+    <h2 v-html="whyToPlay.title" />
+    <div>
       <ReasonsItem
           v-for="(reason, index) in whyToPlay.reasons"
           :key="index"
@@ -31,31 +31,37 @@
     @media only screen and (min-width: 0px) {
       background-image: url('../assets/images/bkg-pink-mobile.png');
       background-size: cover;
-      padding-bottom: 89px;
+      padding: 0 20px 52px 20px;
 
       h2 {
-        padding: 100px 0 40px 0;
+        padding: 85px 0 20px 0;
       }
     }
 
     @media only screen and (min-width: 768px) {
       background-image: url('../assets/images/bkg-pink-tab1.png');
-      padding: 0 60px 80px 60px;
+      background-size: cover;
+      padding: 0 63px 80px 63px;
 
-      h2 {
-        text-align: center;
-      }
-
-      .align-reasons-and-text {
+      > div {
         display: flex;
         flex-direction: row;
       }
     }
 
     @media only screen and (min-width: 1024px) {
-      padding: 20px 156px 125px 156px;
+      padding: 10px 156px 95px 156px;
     }
 
-    @media only screen and (min-width: 1512px) {}
+    @media only screen and (min-width: 1512px) {
+      background-image: url('../assets/images/bkg-pink-desktop.png');
+      background-size: cover;
+      width: 1330px;
+      margin: 0 auto;
+
+      > div {
+        margin: 0 0 0 50px;
+      }
+    }
   }
 </style>

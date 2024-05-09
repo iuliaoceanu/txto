@@ -1,10 +1,10 @@
 <template>
   <div class="question">
     <figure>
-      <img class="icon" src="../assets/icons/Vector%209.png">
-      <span>{{ question }}</span>
+      <img src="../assets/icons/Vector%209.png">
+      <span v-html="question" />
     </figure>
-    <p>{{ answer }}</p>
+    <p v-html="answer" />
   </div>
 </template>
 
@@ -19,12 +19,12 @@
   .question {
     @media only screen and (min-width: 0px) {
       figure{
-        margin-left: 20px;
-      }
+        margin-left:0;
 
-      .icon {
-        width: 11.6px;
-        height: 12.66px;
+        img {
+          width: 11.6px;
+          margin-right: 5px;
+        }
       }
 
       span {
@@ -37,17 +37,11 @@
     }
 
     @media only screen and (min-width: 768px) {
-        width: 300px;
-        margin-right: 23px;
-
-      figure{
-        margin-left: 0;
-      }
+        //width: 300px;
+        padding-right: 25px;
     }
 
     @media only screen and (min-width: 1024px) {
-      width: 424px;
-
       span {
         font-size: 2.2rem;
       }
@@ -57,6 +51,7 @@
       }
     }
 
-    @media only screen and (min-width: 1512px) {}
+    @media only screen and (min-width: 1512px) {
+    }
   }
 </style>

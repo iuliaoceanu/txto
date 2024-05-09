@@ -11,30 +11,21 @@
     @media only screen and (min-width: 0px) {
       display: flex;
       flex-direction: row;
-      margin: 10px 20px;
 
       .insta, .fb {
         width: 36.7px;
-        height: 36.7px;
-        margin: 0 5px;
+        margin-right: 10px;
       }
 
       .yt {
         width: 54.02px;
-        height: 36.7px;
-        margin: 0 5px;
+        margin-right: 10px;
       }
     }
 
-    @media only screen and (min-width: 768px) {
-      margin: 20px 0;
-    }
+    @media only screen and (min-width: 768px) {}
 
-    @media only screen and (min-width: 1024px) {
-      .insta, .fb, .yt {
-        margin-right: 40px;
-      }
-    }
+    @media only screen and (min-width: 1024px) {}
     @media only screen and (min-width: 1512px) {}
   }
 </style>

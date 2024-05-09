@@ -1,14 +1,16 @@
 <template>
-  <section class="game-presentation">
-    <div class="text">
-      <p>{{ gamePresentation.description }}</p>
-      <p>{{ gamePresentation.secondDescription }}</p>
+  <section id="game-presentation" class="game-presentation">
+    <div>
+      <p v-html="gamePresentation.description" />
+      <Carousel :slides="slides" />
     </div>
-    <img src="../assets/images/Group%2032.png">
+    <img src="../assets/images/line2-desktop.png" />
   </section>
 </template>
 
 <script setup>
+  import Carousel from "./Carousel.vue";
+
   import { computed } from 'vue'
   import { useStore } from 'vuex'
   import { useLanguage } from '../store/language.js'
@@ -17,42 +19,73 @@
   const { activeLanguage } = useLanguage()
 
   const gamePresentation = computed(() => state[activeLanguage.value].gamePresentationSection)
+
+  const slides = [
+    { id: 1, src: "src/assets/images/cards/1.png" },
+    { id: 2, src: "src/assets/images/cards/2.png" },
+    { id: 3, src: "src/assets/images/cards/3.png" }
+  ];
 </script>
 
 <style lang="scss">
   .game-presentation {
     @media only screen and (min-width: 0px) {
-      margin: 30px 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 30px 0;
+      overflow: hidden;
 
-      p {
-        padding-bottom: 15px;
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
-      img {
-        width: 490.72px;
-        height: 285.81px;
-        margin-top: 20px;
+      div + img {
+        display: none;
+      }
+
+      p {
+        padding: 0 20px;
       }
     }
 
     @media only screen and (min-width: 768px) {
-      padding: 10px 139px;
+      padding: 20px 139px;
+
+      p {
+        padding: 0;
+      }
     }
 
     @media only screen and (min-width: 1024px) {
-      flex-direction: column-reverse;
+      padding: 30px 267px;
 
-      p {
-        width: 491px;
+      > div {
+        flex-direction: column-reverse;
       }
 
-      img {
+      p + img {
         margin-bottom: 30px;
       }
     }
-    @media only screen and (min-width: 1512px) {}
+
+    @media only screen and (min-width: 1512px) {
+      margin-top: 70px;
+      padding: 0;
+
+      > div {
+        flex-direction: row;
+        padding: 0 247px;
+      }
+
+      p + img {
+        margin-left: 50px;
+      }
+
+      div + img {
+        width: 100%;
+        display: flex;
+        margin-top: 60px;
+      }
+    }
   }
 </style>

@@ -1,12 +1,8 @@
 <template>
-  <section class="who-created-txto">
-    <h2>{{ whoCreatedTXTO.title }}</h2>
-    <p>{{ whoCreatedTXTO.description }}</p>
-    <p>{{ whoCreatedTXTO.secondDescription }}</p>
-    <p>{{ whoCreatedTXTO.thirdDescription }}</p>
-    <p>{{ whoCreatedTXTO.forthDescription }}</p>
-    <p>{{ whoCreatedTXTO.fifthDescription }}</p>
-    <img src="../assets/images/Group%2048.png">
+  <section id="who-created-txto" class="who-created-txto">
+    <h2 v-html="whoCreatedTXTO.title" />
+    <p v-html="whoCreatedTXTO.description" />
+    <img src="../assets/images/Group%2048.png" />
   </section>
 </template>
 
@@ -24,11 +20,7 @@
 <style lang="scss">
   .who-created-txto {
     @media only screen and (min-width: 0px) {
-      padding-top: 20px;
-
-      p {
-        padding-bottom: 10px;
-      }
+      padding: 0 20px;
 
       img {
         display: none;
@@ -36,27 +28,28 @@
     }
 
     @media only screen and (min-width: 768px) {
-      padding: 20px 139px;
+      padding: 10px 139px;
 
       h2 {
-        padding-bottom: 30px;
+        padding-bottom: 20px;
       }
     }
 
     @media only screen and (min-width: 1024px) {
-      padding: 100px 215px 50px 215px;
-
-      p {
-        padding-bottom: 20px;
-      }
+      padding: 20px 214px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       
       img {
         width: 538px;
-        height: 192.55px;
         display: flex;
         margin-top: 40px;
       }
     }
-    @media only screen and (min-width: 1512px) {}
+
+    @media only screen and (min-width: 1512px) {
+      padding: 20px 456px;
+    }
   }
 </style>

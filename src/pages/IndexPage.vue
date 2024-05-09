@@ -57,19 +57,19 @@
       background: linear-gradient(180deg, #F0E8C3 0%, #F5DB81 49.5%, #E7D992 100%);
       z-index: 0;
 
-      h1, h2, h3, p {
-        margin: 10px 20px;
-      }
-
-      span {
-        margin: 0px 20px;
-      }
+      //h1, h2, h3, p {
+      //  margin: 10px 20px;
+      //}
+      //
+      //span {
+      //  margin: 0px 20px;
+      //}
 
     }
     @media only screen and (min-width: 768px) {
-      h1, h2, h3, p {
-        margin: 0;
-      }
+      //h1, h2, h3, p {
+      //  margin: 0;
+      //}
 
       h2 {
         text-align: center;

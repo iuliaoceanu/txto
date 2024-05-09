@@ -1,7 +1,7 @@
 <template>
-  <section class="testimonials">
-    <h2>{{ testimonials.title }}</h2>
-    <div class="align-comments">
+  <section id="testimonials" class="testimonials">
+    <h2 v-html="testimonials.title" />
+    <div>
       <TestimonialsItem
           v-for="(testimonial, index) in testimonials.comments"
           :key="index"
@@ -10,7 +10,7 @@
           :author="testimonial.author"
       ></TestimonialsItem>
     </div>
-    <BaseButton>Cumpara TXTO</BaseButton>
+    <BaseButton text="Cumpara TXTO" />
   </section>
 </template>
 
@@ -34,26 +34,24 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 20px;
+      padding: 0 20px 30px 20px;
     }
 
     @media only screen and (min-width: 768px) {
-      padding: 0 60px 30px 60px;
+      padding: 0 94px 30px 94px;
 
-      h2 {
-        text-align: center;
-      }
-
-      .align-comments {
+      > div {
         display: flex;
         flex-direction: row;
       }
     }
 
     @media only screen and (min-width: 1024px) {
-      padding: 20px 156px 40px 156px;
+      padding: 0 156px 30px 156px;
     }
 
-    @media only screen and (min-width: 1512px) {}
+    @media only screen and (min-width: 1512px) {
+      padding: 0 440px 50px 440px;
+    }
   }
 </style>
