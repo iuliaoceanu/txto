@@ -9,11 +9,10 @@
 // Configuration for your app
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
-
 const { configure } = require('quasar/wrappers');
 
 
-module.exports = configure(function (/* ctx */) {
+module.exports = configure(function (ctx) {
   return {
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -79,9 +78,17 @@ module.exports = configure(function (/* ctx */) {
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
+    // devServer: {
+    //   // https: true
+    //   open: true // opens browser window automatically
+    // },
+
     devServer: {
-      // https: true
-      open: true // opens browser window automatically
+      server: {
+        type: 'http'
+      },
+      port: 8080,
+      open: true, // opens browser window automatically
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
@@ -119,22 +126,37 @@ module.exports = configure(function (/* ctx */) {
     // },
 
     // https://v2.quasar.dev/quasar-cli-vite/developing-ssr/configuring-ssr
+    // ssr: {
+    //   // ssrPwaHtmlFilename: 'offline.html', // do NOT use index.html as name!
+    //                                       // will mess up SSR
+    //
+    //   // extendSSRWebserverConf (esbuildConf) {},
+    //   // extendPackageJson (json) {},
+    //
+    //   pwa: false,
+    //
+    //   // manualStoreHydration: true,
+    //   // manualPostHydrationTrigger: true,
+    //
+    //   prodPort: 3003, // The default port that the production server should use
+    //                   // (gets superseded if process.env.PORT is specified at runtime)
+    //
+    //   middlewares: [
+    //     'render' // keep this as last one
+    //   ]
+    // },
+
     ssr: {
-      // ssrPwaHtmlFilename: 'offline.html', // do NOT use index.html as name!
-                                          // will mess up SSR
-
-      // extendSSRWebserverConf (esbuildConf) {},
-      // extendPackageJson (json) {},
-
       pwa: false,
-
       // manualStoreHydration: true,
       // manualPostHydrationTrigger: true,
-
-      prodPort: 3003, // The default port that the production server should use
+      prodPort: 3000, // The default port that the production server should use
                       // (gets superseded if process.env.PORT is specified at runtime)
-
+      maxAge: 1000 * 60 * 60 * 24 * 30,
+      // Tell browser when a file from the server should expire from cache (in ms)
+      chainWebpackWebserver (/* chain */) {},
       middlewares: [
+        ctx.prod ? 'compression' : '',
         'render' // keep this as last one
       ]
     },
